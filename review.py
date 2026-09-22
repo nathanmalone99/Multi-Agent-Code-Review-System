@@ -8,7 +8,7 @@ findings to a lead reviewer agent that synthesizes one final report.
 
 Usage:
     python review.py path/to/diff_or_file.txt
-    python review.py path/to/diff_or_file.txt --model qwen2.5-coder:14b
+    python review.py path/to/diff_or_file.txt --model qwen2.5-coder:7b
     git diff main | python review.py -            # read from stdin
     python review.py file.py --out reports/out.md
 
@@ -16,7 +16,7 @@ Requirements:
     pip install requests --break-system-packages
     Ollama running locally (default http://localhost:11434) with a model
     pulled, e.g.:
-        ollama pull qwen2.5-coder:14b
+        ollama pull qwen2.5-coder:7b
 """
 
 import argparse
@@ -41,7 +41,7 @@ SPECIALIST_AGENTS = {
 LEAD_AGENT_FILE = "lead_reviewer.md"
 
 DEFAULT_OLLAMA_URL = "http://localhost:11434/api/chat"
-DEFAULT_MODEL = "qwen2.5-coder:14b"
+DEFAULT_MODEL = "qwen2.5-coder:7b"
 DEFAULT_TIMEOUT = 300  # seconds, local models on CPU can be slow
 
 
